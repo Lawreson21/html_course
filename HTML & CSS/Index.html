@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smith IT Solution</title>
+    <link rel="stylesheet" href="Style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to Smith IT Solution</h1>
+      <nav>
+        <ul>
+          <li><a href="/">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="about">
+        <h2>About Us</h2>
+        <p>Information about our company.</p>
+      </section>
+      <section id="services">
+        <h2>Our Services</h2>
+        <p>Details of your services.</p>
+      </section>
+      <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Contact information.</p>
+      </section>
+    </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector("nav");
+        menuToggle.addEventListener("click", function () {
+          nav.classList.toggle("open");
+        });
+      });
+    </script>
+    <section id="products">
+      <h2>Our Products</h2>
+      <div class="product" data-id="1">
+        <h3>Product Name</h3>
+        <p>$10.00</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </section>
+    <script>
+      const cart = [];
+      document.querySelectorAll(".add-to-cart").forEach((button) => {
+        button.addEventListener("click", function () {
+          const product = {
+            id: this.parentElement.dataset.id,
+            name: this.parentElement.querySelector("h3").innerText,
+            price: this.parentElement.querySelector("p").innerText,
+          };
+          cart.push(product);
+          console.log(cart);
+        });
+      });
+    </script>
+
+    <footer>
+      <p>&copy; 2024 Smith IT Solution. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
