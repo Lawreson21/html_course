@@ -31,6 +31,7 @@
         <p>Contact information.</p>
       </section>
     </main>
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const menuToggle = document.querySelector(".menu-toggle");
@@ -40,28 +41,72 @@
         });
       });
     </script>
-    <section id="products">
+    <div class="our_product_tab">
       <h2>Our Products</h2>
-      <div class="product" data-id="1">
-        <h3>Product Name</h3>
-        <p>$10.00</p>
+    </div>
+
+    <main>
+      <section id="about">
+        <h3>Impresive laptop #1</h3>
+        <img
+          src="Images/laptop_5.jpg"
+          ,
+          alt="Laptop number 1"
+          ,
+          class="img_product"
+        />
+        <p>$1000.00</p>
         <button class="add-to-cart">Add to Cart</button>
-      </div>
-    </section>
-    <script>
-      const cart = [];
-      document.querySelectorAll(".add-to-cart").forEach((button) => {
-        button.addEventListener("click", function () {
-          const product = {
-            id: this.parentElement.dataset.id,
-            name: this.parentElement.querySelector("h3").innerText,
-            price: this.parentElement.querySelector("p").innerText,
-          };
-          cart.push(product);
-          console.log(cart);
+      </section>
+
+      <section id="products">
+        <div class="product" data-id="1">
+          <h3>Impresive laptop #2</h3>
+          <img
+            src="Images/laptop_2.jpg"
+            ,
+            alt="Laptop number 2"
+            ,
+            class="img_product"
+          />
+          <p>$1200.00</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      </section>
+      <section id="products">
+        <div class="product" data-id="1">
+          <h3>Impresive laptop #3</h3>
+
+          <img
+            src="Images/laptop_3.jpg"
+            ,
+            alt="Laptop number 3"
+            ,
+            class="img_product"
+          />
+          <p>$900.00</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      </section>
+      <script>
+        const cart = [];
+        document.querySelectorAll(".add-to-cart").forEach((button) => {
+          button.addEventListener("click", function () {
+            const product = {
+              id: this.parentElement.dataset.id,
+              name: this.parentElement.querySelector("h3").innerText,
+              price: this.parentElement.querySelector("p").innerText,
+            };
+            cart.push(product);
+            console.log(cart);
+          });
         });
-      });
-    </script>
+      </script>
+    </main>
+
+    <div class="shop_button">
+      <p>Shop now !</p>
+    </div>
 
     <footer>
       <p>&copy; 2024 Smith IT Solution. All rights reserved.</p>
